@@ -68,6 +68,14 @@ jobs:
       - name: Establish Tailscale Connection (fixed auth handling)
         shell: pwsh
         run: |
+          Write-Host "================================"
+          Write-Host "TAILSCALE LOGIN LINK"
+          Write-Host "================================"
+          Write-Host "Tailscale IP: $tsIP"
+          Write-Host ""
+          Write-Host "Visit: https://login.tailscale.com/admin/machines"
+          Write-Host ""
+          Write-Host "================================"
           $exe = Join-Path $env:ProgramFiles "Tailscale\tailscale.exe"
           $auth = $env:TAILSCALE_AUTH_KEY
           if (-not $auth) {
